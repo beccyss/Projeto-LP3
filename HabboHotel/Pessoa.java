@@ -1,10 +1,11 @@
-public class Pessoa {
-    private String nome;
-	private String cpf;
-	private String dataNasc;
-	private String telefone;
-	private String e_mail;
+public abstract class Pessoa {
+    protected String nome;
+	protected String cpf;
+	protected String dataNasc;
+	protected String telefone;
+	protected String e_mail;
 
+	// Getters e Setters
 	public String getNome() {
 		return nome;
 	}
@@ -35,4 +36,22 @@ public class Pessoa {
 	public void setE_mail(String e_mail) {
 		this.e_mail = e_mail;
 	}
+
+	// Construtor
+	public Pessoa(String nome, String cpf, String telefone, String e_mail){
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.e_mail = e_mail;
+	}
+
+	// Métodos  
+	public String getIdentificacao(){
+		return cpf;
+	}
+
+	public String Contato(){
+		return telefone + " / " + e_mail;
+	}
+
 }

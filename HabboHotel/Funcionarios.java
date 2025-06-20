@@ -1,14 +1,8 @@
 public class Funcionarios extends Pessoa{
-    private String endereço;
     private String cargo;
     private double salario;
 
-    public String getEndereço() {
-        return endereço;
-    }
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
-    }
+    // Getters e Setters
     public String getCargo() {
         return cargo;
     }
@@ -22,4 +16,16 @@ public class Funcionarios extends Pessoa{
         this.salario = salario;
     }
 
+    // Construtor
+    public Funcionarios(String nome, String cpf, String telefone, String e_mail, String cargo, double salario) {
+        super(nome, cpf, telefone, e_mail);
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
+    // toString
+    @Override
+	public String toString() {
+		return  nome + ", " + cpf + ", " + dataNasc + ", " + telefone + ", " + e_mail + ", " + cargo + ", R$" + salario + ";";
+	}
 }
