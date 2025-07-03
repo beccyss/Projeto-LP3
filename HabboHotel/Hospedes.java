@@ -1,4 +1,4 @@
-public class Hospedes extends Pessoa{
+public class Hospedes extends Pessoa {
 
     // Construtor
     public Hospedes(String nome, String cpf, String telefone, String e_mail) {
@@ -6,8 +6,8 @@ public class Hospedes extends Pessoa{
     }
 
     // toString
-	@Override
-	public String toString() {
-		return  nome + ", " + cpf + ", " + dataNasc + ", " + telefone + ", " + e_mail + ";";
-	}
+    @Override
+    public String toString() {
+        return  nome + ", " + cpf + ", " + dataNasc + ", " + telefone + ", " + e_mail + ";";
+    }
 }

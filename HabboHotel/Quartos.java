@@ -3,7 +3,7 @@ public class Quartos {
     private String tipoQuarto;
     private double preco;
     private boolean ocupado;
-    public String status;
+    public String status; // Considere tornar 'status' privado e gerenciar via getters/setters ou ocupar/liberar
 
     // Getters e Setters
     public int getNumPessoas() {
@@ -44,6 +44,7 @@ public class Quartos {
         this.tipoQuarto = tipoQuarto;
         this.preco = preco;
         this.ocupado = ocupado;
+        this.status = ocupado ? "Ocupado" : "Desocupado"; // Define o status inicial
     }
 
     // Métodos
@@ -64,6 +65,6 @@ public class Quartos {
     // toString
     @Override
     public String toString() {
-        return "Quarto " + tipoQuarto + ", Número de Pessoas: " + numPessoas + ", R$" + preco + ", " + status + ";";
+        return "Quarto " + tipoQuarto + ", Número de Pessoas: " + numPessoas + ", R$" + String.format("%.2f", preco) + ", " + status + ";";
     }
 }

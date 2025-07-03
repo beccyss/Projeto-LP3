@@ -1,4 +1,4 @@
-public class Funcionarios extends Pessoa{
+public class Funcionarios extends Pessoa {
     private String cargo;
     private double salario;
 
@@ -25,7 +25,7 @@ public class Funcionarios extends Pessoa{
 
     // toString
     @Override
-	public String toString() {
-		return  nome + ", " + cpf + ", " + dataNasc + ", " + telefone + ", " + e_mail + ", " + cargo + ", R$" + salario + ";";
-	}
+    public String toString() {
+        return  nome + ", " + cpf + ", " + dataNasc + ", " + telefone + ", " + e_mail + ", " + cargo + ", R$" + String.format("%.2f", salario) + ";";
+    }
 }
