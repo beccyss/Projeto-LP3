@@ -3,9 +3,8 @@ public class Quartos {
     private String tipoQuarto;
     private double preco;
     private boolean ocupado;
-    public String status;
+    private String status;
 
-    // Getters e Setters
     public int getNumPessoas() {
         return numPessoas;
     }
@@ -36,17 +35,21 @@ public class Quartos {
 
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
+        this.status = ocupado ? "Ocupado" : "Desocupado";
     }
 
-    // Construtor
+    public String getStatus() {
+        return status;
+    }
+
     public Quartos(int numPessoas, String tipoQuarto, double preco, boolean ocupado) {
         this.numPessoas = numPessoas;
         this.tipoQuarto = tipoQuarto;
         this.preco = preco;
         this.ocupado = ocupado;
+        this.status = ocupado ? "Ocupado" : "Desocupado";
     }
 
-    // Métodos
     public boolean estaDisponível() {
         return !ocupado;
     }
@@ -61,9 +64,8 @@ public class Quartos {
         status = "Desocupado";
     }
 
-    // toString
     @Override
     public String toString() {
-        return "Quarto " + tipoQuarto + ", Número de Pessoas: " + numPessoas + ", R$" + preco + ", " + status + ";";
+        return "Quarto " + tipoQuarto + ", Numero de Pessoas: " + numPessoas + ", R$" + String.format("%.2f", preco) + ", " + status + ";";
     }
 }
