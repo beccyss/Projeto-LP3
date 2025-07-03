@@ -96,7 +96,7 @@ public class Main {
             // Este bloco não será executado
             Reservas reserva3 = new Reservas(hosp1, quarto301, checkIn3, checkOut3, "Pix");
             quarto301.ocupar();
-            System.out.println("Reserva - SUCESSO (não deveria acontecer aqui): " + reserva3.getHospede().getNome());
+            System.out.println("Reserva - SUCESSO (nao deveria acontecer aqui): " + reserva3.getHospede().getNome());
             registrarReserva(reserva3);
         } else {
             System.out.println("Reserva - FALHA: Quarto " + quarto301.getTipoQuarto() + " (" + quarto301.getNumPessoas() + " pessoas) nao esta disponivel. Status: " + quarto301.status);
@@ -119,7 +119,7 @@ public class Main {
         if (historico.isEmpty()) {
             System.out.println("Nenhuma reserva registrada ainda.");
         } else {
-            System.out.println("CPF_Hospede;Nome_Hospede;Tipo_Quarto;Num_Pessoas_Quarto;CheckIn;CheckOut;ValorTotal;FormaPagamento;");
+            System.out.println("CPF_Hospede; Nome_Hospede; Tipo_Quarto; Num_Pessoas_Quarto; CheckIn; CheckOut; ValorTotal; FormaPagamento;");
             for (String linhaReserva : historico) {
                 System.out.println(linhaReserva);
             }
@@ -141,7 +141,7 @@ public class Main {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(NOME_ARQUIVO_RESERVAS, true))) {
             writer.write(reserva.toFileString());
             writer.newLine();
-            System.out.println("Reserva registrada no histórico.");
+            System.out.println("Reserva registrada no historico.");
         } catch (IOException e) {
             System.err.println("Erro ao registrar reserva no arquivo: " + e.getMessage());
         }
@@ -159,23 +159,19 @@ public class Main {
                 reservas.add(linha);
             }
         } catch (IOException e) {
-            System.err.println("Erro ao ler histórico de reservas: " + e.getMessage());
+            System.err.println("Erro ao ler historico de reservas: " + e.getMessage());
             // Se o arquivo não existir, esta exceção será lançada. Isso é normal na primeira execução.
         }
         return reservas;
     }
 
-    /**
-     * Conta e exibe o número de reservas para um CPF específico.
-     * Percorre o histórico e verifica o CPF de cada reserva.
-     * @param cpf O CPF do cliente a ser pesquisado.
-     */
+    
     public static void contarReservasPorCliente(String cpf) {
         int count = 0;
         List<String> historico = lerHistoricoReservas();
         System.out.println("\nBuscando reservas para o CPF: " + cpf);
         if (historico.isEmpty()) {
-            System.out.println("Nenhuma reserva registrada no histórico.");
+            System.out.println("Nenhuma reserva registrada no historico.");
             return;
         }
 

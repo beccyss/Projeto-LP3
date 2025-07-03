@@ -65,6 +65,6 @@ public class Quartos {
     // toString
     @Override
     public String toString() {
-        return "Quarto " + tipoQuarto + ", Número de Pessoas: " + numPessoas + ", R$" + String.format("%.2f", preco) + ", " + status + ";";
+        return "Quarto " + tipoQuarto + ", Numero de Pessoas: " + numPessoas + ", R$" + String.format("%.2f", preco) + ", " + status + ";";
     }
 }
